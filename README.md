@@ -2,6 +2,12 @@
 
 This project is focused on applying PCA and clustering methods (mini batch K-means) to image compression problem.
 
+**Note** that Python >= 3.10 is required.
+
+
+### Web application
+
+Web application is deployed on Streamlit Community Cloud and can be found [here](https://unsupervised-ml-image-compression.streamlit.app/).
 
 ## Project structure
 
