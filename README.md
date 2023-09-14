@@ -5,6 +5,7 @@ This project is focused on applying PCA and clustering methods (mini batch K-mea
 
 ## Project structure
 
+```
 .
 ├── LICENSE
 ├── README.md
@@ -25,6 +26,7 @@ This project is focused on applying PCA and clustering methods (mini batch K-mea
 ├── Dockerfile
 ├── Makefile
 └── Main_Page.py
+```
 
 ## Running the application
 
