@@ -1,3 +1,7 @@
+"""
+Main page of streamlit application.
+Subpages are defined in `pages` directory.
+"""
 import os
 
 import streamlit as st

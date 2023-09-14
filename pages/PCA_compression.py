@@ -1,3 +1,6 @@
+"""
+Subpage with image compression through PCA. 
+"""
 import streamlit as st
 from io import BytesIO
 

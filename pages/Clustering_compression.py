@@ -1,3 +1,6 @@
+"""
+Subpage with image compression through clustering. 
+"""
 import streamlit as st
 from io import BytesIO
 
