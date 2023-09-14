@@ -1,32 +1,30 @@
 import streamlit as st
 from io import BytesIO
 
-from scripts.pca_compression import PCACompressor
+from scripts.cluster_compression import ClusterCompressor
 from scripts.utils import *
 
+st.set_page_config(page_title="Clustering", page_icon=":fire:")
 
-st.set_page_config(page_title="PCA", page_icon=":fire:")
-
-st.markdown("# PCA compression")
+st.markdown("# Clustering compression")
 st.sidebar.header("Instructions")
-st.sidebar.markdown(
-    """
-    Please upload the image, choose the number of principal compopnents to use for compression.
-
-    Then click the button and see the results!
-    """
+st.sidebar.markdown("""
+    Please select an image and the number of clusters you want to use for compression.
+                    
+    Then click the button to compress the image and see the results!
+"""
 )
 
 uploaded_image = st.file_uploader("Upload your image")
 
-number = st.number_input("Number of principal components", min_value=1, max_value=500, value=100, step=1)
+number = st.number_input("Number of clusters", min_value=1, max_value=300, value=16, step=1)
 
 if 'clicked' not in st.session_state:
     st.session_state.clicked = False
 
 def click_button():
     st.session_state.clicked = True
-    
+
 st.button("Compress", on_click=click_button)
 
 if st.session_state.clicked:
@@ -35,7 +33,7 @@ if st.session_state.clicked:
         if image_array is None:
             st.write("That is an invalied image file. Please try again.")
         else:
-            compressor = PCACompressor(image_array)
+            compressor = ClusterCompressor(image_array)
             compressed_array = compressor.compress(number)
             compressed_image = load_array_into_image(compressed_array)
 
@@ -52,6 +50,6 @@ if st.session_state.clicked:
 
             st.download_button("Download compressed image", 
                                 data=byte_image, 
-                                file_name=f"{initial_file_name}_pca_compressed.jpg")
+                                file_name=f"{initial_file_name}_clustering_compressed.jpg")
     else:
         st.write("Please upload an image first.")
