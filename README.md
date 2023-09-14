@@ -4,6 +4,12 @@ This project is focused on applying PCA and clustering methods (mini batch K-mea
 
 **Note** that Python >= 3.10 is required.
 
+## Results
+
+|Original image | Compressed image with K = 10 | Compressed image with K = 50 |
+|---| --- | ---|
+|![](images/drops.jpg)| ![](images/k_10.png)| ![](images/k_50.png)|
+||||
 
 ### Web application
 
