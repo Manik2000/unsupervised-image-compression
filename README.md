@@ -64,6 +64,8 @@ Clone this repository and navigate to the root directory of the project.
     streamlit run Main_page.py
     ```
 
+Alternatilvely, if you have Make installed, you can use use command `make streamlit`.
+
 * Docker
 
     1. Build docker image (named `my_app_image`)
@@ -74,3 +76,4 @@ Clone this repository and navigate to the root directory of the project.
     ```bash
     docker run -p 8501:8501 my_app_image
     ```
+Alternatilvely, if you have Make installed, you can use use command `make docker-all`.
